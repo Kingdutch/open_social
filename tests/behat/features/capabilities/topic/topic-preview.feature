@@ -10,9 +10,10 @@ Feature: Preview Topic
     And I click "Topics"
     And I click "Create Topic"
     When I fill in "Title" with "This is a test topic"
-    When I fill in the following:
+    And I fill in the custom fields for this "topic"
+    And I fill in the following:
       | Title | This is a test topic |
-     And I fill in the "edit-body-0-value" WYSIWYG editor with "Body description text"
+    And I fill in the "edit-body-0-value" WYSIWYG editor with "Body description text"
     And I click radio button "Discussion"
     And I attach the file "/files/humans.txt" to "Add a new file"
     And I press "Preview"
