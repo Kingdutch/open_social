@@ -10,7 +10,7 @@ Feature: Comment on a Post
       | PostUser1 |      1 | PostUser1 |
       | PostUser2 |      1 | PostUser2 |
     And I am logged in as "PostUser1"
-    And I am on the homepage
+    And I am on the community stream
 
         # Scenario: Succesfully create a private post
    When I fill in "Say something to the Community" with "This is a community post."
@@ -19,11 +19,11 @@ Feature: Comment on a Post
    Then I should see the success message "Your post has been posted."
     And I should see "This is a community post." in the "Main content front"
     And I should see "PostUser1" in the "Main content front"
-    And I should be on "/stream"
+    And I should be on the community stream
 
         # Scenario: Post a comment on this private post
   Given I am logged in as "PostUser2"
-    And I am on the homepage
+    And I am on the community stream
    When I fill in "Comment #1" for "Post comment"
     And I press "Comment"
    Then I should see the success message "Your comment has been posted."
@@ -36,7 +36,7 @@ Feature: Comment on a Post
    Then I should see the success message "Your comment has been posted."
 
         # Scenario: delete comment
-   When I am on the homepage
+   When I am on the community stream
     And I click the xth "1" element with the css ".dropdown-toggle" in the "Main content"
     And I click "Delete"
    Then I should see "This action cannot be undone."
@@ -44,7 +44,7 @@ Feature: Comment on a Post
    When I press "Delete"
    Then I should see "The comment and all its replies have been deleted."
 
-  Given I am on the homepage
+  Given I am on the community stream
    When I fill in "Comment #2" for "Post comment"
     And I press "Comment"
    Then I should see the success message "Your comment has been posted."

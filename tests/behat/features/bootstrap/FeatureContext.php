@@ -40,6 +40,14 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
     protected $groups = array();
 
     /**
+     * Contains the URL path for the community stream page. Makes it easy to
+     * alter this path without changing any dependent methods.
+     *
+     * @var string
+     */
+    protected $streamPath = "/stream";
+
+    /**
      * @BeforeScenario
      *
      * @param \Behat\Behat\Hook\Scope\BeforeScenarioScope $scope
@@ -824,6 +832,27 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
     }
 
     /**
+     * Opens the community stream page.
+     *
+     * @Given /^I am on the community stream$/
+     * @When /^I go to the community stream$/
+     */
+    public function openCommunityStreamPage()
+    {
+      $this->visitPath($this->streamPath);
+    }
+
+  /**
+   * Checks, that current page PATH is equal to that of the community stream
+   * @Then /^(?:|I )should be on the community stream$/
+   */
+  public function assertOnCommunityStreamPage()
+  {
+    $this->assertSession()->addressEquals($this->locatePath($this->streamPath));
+  }
+
+
+  /**
      * This opens the entity and check for the expected access.
      *
      * @param $entity_type
