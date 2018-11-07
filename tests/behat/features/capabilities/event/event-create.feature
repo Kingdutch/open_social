@@ -10,7 +10,8 @@ Feature: Create Event
     And I am on "user"
     And I click "Events"
     And I click "Create Event"
-    When I fill in the following:
+    When I fill in the custom fields for this "event"
+    And I fill in the following:
          | Title | This is a test event |
          | edit-field-event-date-0-value-date | 2025-01-01 |
          | edit-field-event-date-end-0-value-date | 2025-01-01 |
