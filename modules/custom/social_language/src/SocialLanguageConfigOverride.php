@@ -28,14 +28,6 @@ class SocialLanguageConfigOverride implements ConfigFactoryOverrideInterface {
       $children = $config->get('third_party_settings.field_group.group_locale_settings.children');
       $children[] = 'language';
 
-      $content = $config->get('content');
-      $content['language'] = [
-        'weight' => 1,
-        'region' => 'content',
-        'settings' => [],
-        'third_party_settings' => [],
-      ];
-
       $hidden = $config->get('hidden');
       unset($hidden['language']);
 
@@ -47,7 +39,14 @@ class SocialLanguageConfigOverride implements ConfigFactoryOverrideInterface {
             ],
           ],
         ],
-        'content' => $content,
+        'content' => [
+          'language' => [
+            'weight' => 1,
+            'region' => 'content',
+            'settings' => [],
+            'third_party_settings' => [],
+          ],
+        ],
         'hidden' => $hidden,
       ];
     }
