@@ -255,7 +255,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2018-11-27 09:19+0000\n"
-"PO-Revision-Date: 2018-11-27 10:35+0000\n"
+"PO-Revision-Date: 2018-11-27 10:57+0000\n"
 "Last-Translator: Weblate Admin <alexander@goalgorilla.com>\n"
 "Language-Team: Dutch <https://develop-sr3snxi-i3x5x6gs2mxic.eu-2.platformsh."
 "site/projects/open-social/distribution/nl/>\n"
@@ -292,11 +292,13 @@ msgstr ""
 
 #: social.profile:85
 msgid "Social Auth Facebook module requirements"
-msgstr ""
+msgstr "Social Auth Facebook module vereisten"
 
 #: social.profile:87 modules/custom/social_auth_facebook/social_auth_facebook.install:17
 msgid "Social Auth Facebook requires Facebook PHP Library. Make sure the library is installed via Composer."
 msgstr ""
+"Social Auth Facebook vereist de Facebook PHP library. Zorg dat deze library "
+"is geïnstalleerd vai Composer."
 
 #: social.profile:94
 msgid "Social Auth Google module requirements"
